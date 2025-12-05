@@ -1,0 +1,254 @@
+.capabilities {
+  background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+  padding: 5rem 0;
+  position: relative;
+}
+
+.capabilities::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 70% 30%, rgba(102, 126, 234, 0.03) 0%, transparent 50%),
+              radial-gradient(circle at 30% 70%, rgba(118, 75, 162, 0.03) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.sectionHeader {
+  text-align: center;
+  margin-bottom: 4rem;
+  position: relative;
+  z-index: 1;
+}
+
+.badge {
+  display: inline-block;
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  margin-bottom: 1rem;
+}
+
+.sectionTitle {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #1a202c;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+.sectionSubtitle {
+  font-size: 1.1rem;
+  color: #64748b;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.capabilitiesGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+  margin-bottom: 3rem;
+  position: relative;
+  z-index: 1;
+}
+
+.capabilityCard {
+  background: white;
+  border-radius: 16px;
+  padding: 2.5rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+  border: 1px solid #e2e8f0;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+}
+
+.capabilityCard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(135deg, var(--capability-color-primary) 0%, var(--capability-color-secondary) 100%);
+}
+
+.capabilityCard:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
+}
+
+.capabilityblue {
+  --capability-color-primary: #3b82f6;
+  --capability-color-secondary: #1d4ed8;
+}
+
+.capabilitypurple {
+  --capability-color-primary: #8b5cf6;
+  --capability-color-secondary: #7c3aed;
+}
+
+.capabilitygreen {
+  --capability-color-primary: #10b981;
+  --capability-color-secondary: #059669;
+}
+
+.capabilityorange {
+  --capability-color-primary: #f59e0b;
+  --capability-color-secondary: #d97706;
+}
+
+.capabilityteal {
+  --capability-color-primary: #14b8a6;
+  --capability-color-secondary: #0d9488;
+}
+
+.capabilityred {
+  --capability-color-primary: #ef4444;
+  --capability-color-secondary: #dc2626;
+}
+
+.capabilityBadge {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: var(--capability-color-primary);
+  color: white;
+  padding: 0.25rem 0.75rem;
+  border-radius: 12px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.capabilityIcon {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--capability-color-primary) 0%, var(--capability-color-secondary) 100%);
+  border-radius: 20px;
+  color: white;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+}
+
+.capabilityIcon svg {
+  width: 32px;
+  height: 32px;
+  color: white;
+  transition: all 0.3s ease;
+}
+
+.capabilityCard:hover .capabilityIcon {
+  transform: scale(1.1);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.2);
+}
+
+.capabilityCard:hover .capabilityIcon svg {
+  transform: scale(1.1);
+}
+
+.capabilityContent {
+  flex: 1;
+}
+
+.capabilityTitle {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #1a202c;
+  margin-bottom: 1rem;
+  line-height: 1.3;
+}
+
+.capabilityDescription {
+  color: #64748b;
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+.ctaSection {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.ctaButton {
+  display: inline-block;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  padding: 1rem 2.5rem;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 1rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  letter-spacing: 0.5px;
+}
+
+.ctaButton:hover {
+  color: white;
+  text-decoration: none;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+}
+
+/* Responsive Design */
+@media screen and (max-width: 996px) {
+  .capabilitiesGrid {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+  }
+  
+  .sectionTitle {
+    font-size: 2rem;
+  }
+  
+  .capabilityCard {
+    padding: 2rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .capabilities {
+    padding: 3rem 0;
+  }
+  
+  .sectionHeader {
+    margin-bottom: 3rem;
+  }
+  
+  .sectionTitle {
+    font-size: 1.75rem;
+  }
+  
+  .capabilitiesGrid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .capabilityCard {
+    padding: 1.5rem;
+  }
+  
+  .capabilityIcon {
+    width: 70px;
+    height: 70px;
+  }
+  
+  .capabilityIcon svg {
+    width: 28px;
+    height: 28px;
+  }
+}
