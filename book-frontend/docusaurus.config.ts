@@ -35,6 +35,8 @@ const config: Config = {
     locales: ['en', 'ur', 'es', 'fr'],
   },
 
+  clientModules: [require.resolve('./src/client-modules/chatbot.js')],
+
   presets: [
     [
       'classic',
