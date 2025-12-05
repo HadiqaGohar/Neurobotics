@@ -14,12 +14,14 @@ const VoiceInput: React.FC<VoiceInputProps> = ({
 
   useEffect(() => {
     // Check if browser supports media recording
-    if (!navigator.mediaDevices || !window.MediaRecorder) {
+    if (typeof window === 'undefined' || !navigator.mediaDevices || !window.MediaRecorder) {
       setIsSupported(false);
     }
   }, []);
 
   const startRecording = async () => {
+    if (typeof window === 'undefined') return;
+    
     try {
       const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
       const recorder = new MediaRecorder(stream);

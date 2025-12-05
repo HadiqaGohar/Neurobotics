@@ -120,12 +120,14 @@ const ChatBot: React.FC = () => {
   };
 
   const copyToClipboard = (text: string) => {
-    navigator.clipboard.writeText(text).then(() => {
-      // You could add a toast notification here
-      console.log('Text copied to clipboard');
-    }).catch(err => {
-      console.error('Failed to copy text: ', err);
-    });
+    if (typeof window !== 'undefined' && navigator.clipboard) {
+      navigator.clipboard.writeText(text).then(() => {
+        // You could add a toast notification here
+        console.log('Text copied to clipboard');
+      }).catch(err => {
+        console.error('Failed to copy text: ', err);
+      });
+    }
   };
 
   const toggleSize = () => {

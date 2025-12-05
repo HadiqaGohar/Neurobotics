@@ -1,0 +1,21 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "book-frontend/package.json",
+      "use": "@vercel/static-build",
+      "config": {
+        "distDir": "book-frontend/build"
+      }
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/book-frontend/build/$1"
+    }
+  ],
+  "buildCommand": "cd book-frontend && npm run build",
+  "outputDirectory": "book-frontend/build",
+  "installCommand": "cd book-frontend && npm install"
+}

@@ -1,6 +1,8 @@
 import { ChatResponse, ChatHistoryResponse } from './types';
 
-const API_BASE_URL = 'http://localhost:8000'; // Update this to match your backend URL
+const API_BASE_URL = process.env.NODE_ENV === 'production' 
+  ? (process.env.REACT_APP_API_URL || 'https://your-backend-url.com') 
+  : 'http://localhost:8000';
 
 class ChatAPI {
   private async request<T>(endpoint: string, options: RequestInit = {}): Promise<T> {
