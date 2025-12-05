@@ -8,7 +8,7 @@ import BrowserOnly from '@docusaurus/BrowserOnly';
  */
 const ChatBotWrapper: React.FC = () => {
   return (
-    <BrowserOnly fallback={<div />}>
+    <BrowserOnly fallback={<div id="docusaurus-chatbot-ssr-fallback" />}>
       {() => <ChatBot />}
     </BrowserOnly>
   );
