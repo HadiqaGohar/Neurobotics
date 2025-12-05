@@ -4,5 +4,10 @@
   "installCommand": "npm install",
   "env": {
     "NODE_ENV": "production"
+  },
+  "runtimes": {
+    "node": {
+      "version": "20.x"
+    }
   }
 }
