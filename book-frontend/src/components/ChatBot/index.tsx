@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import ChatWindow from './ChatWindow';
 import FloatingIcon from './FloatingIcon';
+import DebugInfo from './DebugInfo';
 import { ChatMessage, ChatSession } from './types';
 import { chatAPI } from './api';
 import './styles.css';
@@ -21,6 +22,20 @@ const ChatBot: React.FC = () => {
     // Load chat history if exists
     loadChatHistory(newSessionId);
   }, []);
+
+  // Add welcome message for demo mode
+  useEffect(() => {
+    if (typeof window !== 'undefined' && messages.length === 0) {
+      const welcomeMessage: ChatMessage = {
+        id: 'welcome_message',
+        content: "👋 Welcome! I'm your AI assistant. This is a demo version - try asking me anything to see the interface in action!",
+        sender: 'ai',
+        timestamp: new Date(),
+        sessionId: sessionId || 'demo'
+      };
+      setMessages([welcomeMessage]);
+    }
+  }, [sessionId]);
 
   const loadChatHistory = async (sessionId: string) => {
     try {
@@ -141,43 +156,46 @@ const ChatBot: React.FC = () => {
   };
 
   return (
-    <div className="chatbot-container">
-      <FloatingIcon 
-        isOpen={isOpen}
-        onClick={() => setIsOpen(!isOpen)}
-      />
-      
-      {isOpen && (
-        <>
-          <ChatWindow
-            messages={messages}
-            onSendMessage={sendMessage}
-            onVoiceInput={handleVoiceInput}
-            onFileUpload={handleFileUpload}
-            onCopyMessage={copyToClipboard}
-            onClose={() => setIsOpen(false)}
-            onToggleSize={toggleSize}
-            onShowHistory={handleShowHistory}
-            windowSize={windowSize}
-            isLoading={isLoading}
-          />
-          
-          {/* Floating icon inside chat for easy access */}
-          <div className="chat-floating-icon">
-            <button
-              className="mini-chat-icon"
-              onClick={() => setIsOpen(false)}
-              aria-label="Minimize chat"
-              title="Minimize"
-            >
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
-              </svg>
-            </button>
-          </div>
-        </>
-      )}
-    </div>
+    <>
+      <DebugInfo />
+      <div className="chatbot-container">
+        <FloatingIcon 
+          isOpen={isOpen}
+          onClick={() => setIsOpen(!isOpen)}
+        />
+        
+        {isOpen && (
+          <>
+            <ChatWindow
+              messages={messages}
+              onSendMessage={sendMessage}
+              onVoiceInput={handleVoiceInput}
+              onFileUpload={handleFileUpload}
+              onCopyMessage={copyToClipboard}
+              onClose={() => setIsOpen(false)}
+              onToggleSize={toggleSize}
+              onShowHistory={handleShowHistory}
+              windowSize={windowSize}
+              isLoading={isLoading}
+            />
+            
+            {/* Floating icon inside chat for easy access */}
+            <div className="chat-floating-icon">
+              <button
+                className="mini-chat-icon"
+                onClick={() => setIsOpen(false)}
+                aria-label="Minimize chat"
+                title="Minimize"
+              >
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                </svg>
+              </button>
+            </div>
+          </>
+        )}
+      </div>
+    </>
   );
 };
 

@@ -1,5 +1,6 @@
 import React from 'react';
 import Layout from '@theme/Layout';
+import ChatBotWrapper from '@site/src/components/ChatBot/ChatBotWrapper';
 import styles from './chatbot-demo.module.css';
 
 export default function ChatbotDemo(): JSX.Element {
@@ -102,6 +103,7 @@ export default function ChatbotDemo(): JSX.Element {
           </div>
         </div>
       </div>
+      <ChatBotWrapper />
     </Layout>
   );
 }

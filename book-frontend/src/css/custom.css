@@ -125,3 +125,40 @@
 .navbar__items {
   align-items: center;
 }
+/* ChatBot Global Styles - Ensure visibility on all pages */
+.chatbot-container {
+  position: fixed !important;
+  bottom: 0 !important;
+  right: 0 !important;
+  z-index: 9999 !important;
+  pointer-events: none !important;
+}
+
+.chatbot-container * {
+  pointer-events: auto !important;
+}
+
+.floating-chat-icon {
+  position: fixed !important;
+  bottom: 24px !important;
+  right: 24px !important;
+  z-index: 10000 !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  display: flex !important;
+}
+
+/* Ensure ChatBot works with Docusaurus theme */
+[data-theme='dark'] .floating-chat-icon {
+  background: linear-gradient(135deg, #9a65d3 0%, #764ba2 100%) !important;
+}
+
+[data-theme='dark'] .chat-header {
+  background: linear-gradient(135deg, #9a65d3 0%, #764ba2 100%) !important;
+}
+
+/* Override any conflicting Docusaurus styles */
+.chatbot-container .floating-chat-icon,
+.chatbot-container .chat-window {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", sans-serif !important;
+}
