@@ -69,7 +69,7 @@ const config: Config = {
         // Configure Webpack to provide process.env variables to client-side code
         // See https://docusaurus.io/docs/api/docusaurus-config#configureWebpack
         // This is a common solution for ReferenceError: process is not defined
-        configureWebpack: (webpackConfig, is             Server, utils) => {
+        configureWebpack: (webpackConfig, isServer, utils) => {
           const { DefinePlugin } = require('webpack');
           return {
             plugins: [
