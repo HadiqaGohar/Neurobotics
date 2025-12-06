@@ -2,6 +2,7 @@ import {themes as prismThemes} from 'prism-react-renderer';
 import type {Config} from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
 import webpack from 'webpack'; // Import webpack to access DefinePlugin
+import path from 'path';
 
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
@@ -37,6 +38,11 @@ const config: Config = {
   },
 
   clientModules: [require.resolve('./src/client-modules/chatbot.js')],
+
+  plugins: [
+    path.resolve(__dirname, './plugins/docusaurus-plugin-webpack-env'),
+    // Add other plugins here if you have any
+  ],
 
   presets: [
     [
@@ -75,23 +81,6 @@ const config: Config = {
     // ... other theme configurations ...
   } satisfies Preset.ThemeConfig,
 
-  // Correct place to configure Webpack
-  configureWebpack: (config, isServer, utils) => {
-    // Check if process.env.REACT_APP_API_URL is defined
-    const api_url = process.env.REACT_APP_API_URL;
-
-    // Only add DefinePlugin if the API URL is defined to avoid 'undefined' string in code
-    if (api_url) {
-      config.plugins = config.plugins || [];
-      config.plugins.push(
-        new webpack.DefinePlugin({
-          'process.env.REACT_APP_API_URL': JSON.stringify(api_url),
-        }),
-      );
-    }
-
-    return config;
-  },
 };
 
 export default config;
