@@ -1,7 +1,7 @@
 import { ChatResponse, ChatHistoryResponse } from './types';
 
 const API_BASE_URL = process.env.NODE_ENV === 'production' 
-  ? (process.env.REACT_APP_API_URL || '') 
+  ? (process.env.REACT_APP_API_URL || 'mock') // Force mock mode if no API URL
   : 'http://localhost:8000';
 
 class ChatAPI {
