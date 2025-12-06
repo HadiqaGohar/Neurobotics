@@ -11,6 +11,7 @@ import ChatBotWrapper from '@site/src/components/ChatBot/ChatBotWrapper'; // Imp
 import Heading from '@theme/Heading';
 
 import styles from './index.module.css';
+import chatbotStyles from './chatbot-demo.module.css'; // Import chatbot-demo styles
 
 function HomepageHeader() {
   const {siteConfig} = useDocusaurusContext();
