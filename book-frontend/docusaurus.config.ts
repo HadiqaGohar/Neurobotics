@@ -1,6 +1,7 @@
 import {themes as prismThemes} from 'prism-react-renderer';
 import type {Config} from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
+import webpack from 'webpack';
 
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
@@ -36,6 +37,18 @@ const config: Config = {
   },
 
   clientModules: [require.resolve('./src/client-modules/chatbot.js')],
+
+  webpack: {
+    configure: (webpackConfig, { env, paths }) => {
+      webpackConfig.plugins.push(
+        new webpack.DefinePlugin({
+          'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV),
+          'process.env.REACT_APP_API_URL': JSON.stringify(process.env.REACT_APP_API_URL || ''),
+        }),
+      );
+      return webpackConfig;
+    },
+  },
 
   presets: [
     [
