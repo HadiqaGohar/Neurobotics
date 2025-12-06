@@ -65,20 +65,21 @@ const config: Config = {
         },
         theme: {
           customCss: './src/css/custom.css',
-        },
-        // Configure Webpack to provide process.env variables to client-side code
-        // See https://docusaurus.io/docs/api/docusaurus-config#configureWebpack
-        // This is a common solution for ReferenceError: process is not defined
-        configureWebpack: (webpackConfig, isServer, utils) => {
-          const { DefinePlugin } = require('webpack');
-          return {
-            plugins: [
-              new DefinePlugin({
-                'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV),
-                'process.env.REACT_APP_API_URL': JSON.stringify(process.env.REACT_APP_API_URL || ''),
-              }),
-            ],
-          };
+          // Configure Webpack to provide process.env variables to client-side code
+          // This is a common solution for ReferenceError: process is not defined
+          webpack: {
+            configure: (webpackConfig, isServer, utils) => {
+              const { DefinePlugin } = require('webpack');
+              return {
+                plugins: [
+                  new DefinePlugin({
+                    'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV),
+                    'process.env.REACT_APP_API_URL': JSON.stringify(process.env.REACT_APP_API_URL || ''),
+                  }),
+                ],
+              };
+            },
+          },
         },
       } satisfies Preset.Options,
     ],
