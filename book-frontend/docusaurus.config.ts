@@ -1,6 +1,7 @@
 import {themes as prismThemes} from 'prism-react-renderer';
 import type {Config} from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
+import webpack from 'webpack'; // Import webpack to access DefinePlugin
 
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
@@ -65,119 +66,32 @@ const config: Config = {
         },
         theme: {
           customCss: './src/css/custom.css',
-          // Configure Webpack to provide process.env variables to client-side code
-          // This is a common solution for ReferenceError: process is not defined
-          webpack: {
-            configure: (webpackConfig, isServer, utils) => {
-              const { DefinePlugin } = require('webpack');
-              return {
-                plugins: [
-                  new DefinePlugin({
-                    'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV),
-                    'process.env.REACT_APP_API_URL': JSON.stringify(process.env.REACT_APP_API_URL || ''),
-                  }),
-                ],
-              };
-            },
-          },
         },
       } satisfies Preset.Options,
     ],
   ],
 
   themeConfig: {
-    // Replace with your project's social card
-    image: 'img/docusaurus-social-card.jpg',
-    colorMode: {
-      respectPrefersColorScheme: true,
-    },
-    navbar: {
-      title: 'Neurobotics AI',
-      logo: {
-        alt: 'Neurobotics AI Logo',
-        src: 'img/neurobotics-logo.svg',
-      },
-      items: [
-        {
-          type: 'docSidebar',
-          sidebarId: 'tutorialSidebar',
-          position: 'left',
-          label: 'Modules',
-        },
-        {to: '/blog', label: 'Blog', position: 'left'},
-        {
-          type: 'search',
-          position: 'right',
-        },
-        {
-          type: 'localeDropdown',
-          position: 'right',
-        },
-        {
-          href: '/auth/signin',
-          label: 'Sign In',
-          position: 'right',
-          className: 'navbar-signin-link',
-        },
-        {
-          href: '/auth/signup',
-          label: 'Get Started',
-          position: 'right',
-          className: 'navbar-signup-button',
-        },
-      ],
-    },
-
-    footer: {
-      style: 'dark',
-      links: [
-        {
-          title: 'Docs',
-          items: [
-            {
-              label: 'Tutorial',
-              to: '/docs/intro',
-            },
-          ],
-        },
-        {
-          title: 'Community',
-          items: [
-            {
-              label: 'Stack Overflow',
-              href: 'https://stackoverflow.com/questions/tagged/docusaurus',
-            },
-            {
-              label: 'Discord',
-              href: 'https://discordapp.com/invite/docusaurus',
-            },
-            {
-              label: 'X',
-              href: 'https://x.com/docusaurus',
-            },
-          ],
-        },
-        {
-          title: 'More',
-          items: [
-            {
-              label: 'Blog',
-              to: '/blog',
-            },
-            {
-              label: 'GitHub',
-              href: 'https://github.com/facebook/docusaurus',
-            },
-          ],
-        },
-      ],
-      copyright: `Copyright © ${new Date().getFullYear()} Neurobotics AI. Built with Docusaurus.`,
-    },
-    prism: {
-      theme: prismThemes.github,
-      darkTheme: prismThemes.dracula,
-    },
+    // ... other theme configurations ...
   } satisfies Preset.ThemeConfig,
+
+  // Correct place to configure Webpack
+  configureWebpack: (config, isServer, utils) => {
+    // Check if process.env.REACT_APP_API_URL is defined
+    const api_url = process.env.REACT_APP_API_URL;
+
+    // Only add DefinePlugin if the API URL is defined to avoid 'undefined' string in code
+    if (api_url) {
+      config.plugins = config.plugins || [];
+      config.plugins.push(
+        new webpack.DefinePlugin({
+          'process.env.REACT_APP_API_URL': JSON.stringify(api_url),
+        }),
+      );
+    }
+
+    return config;
+  },
 };
 
 export default config;
