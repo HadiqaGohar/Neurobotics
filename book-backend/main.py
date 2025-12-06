@@ -11,13 +11,19 @@ from datetime import datetime
 
 load_dotenv()
 
-# FastAPI app setup
-app = FastAPI(title="Book Backend with Chatbot API", version="1.0.0")
+# FastAPI app setup 
+# description="An AI assistant using Google's official SDK for reliability.",
+# version="5.1.0" # Final version
+app = FastAPI(title="Neurobotics AI Book Backend with Chatbot API", version="1.0.0")
 
 # CORS middleware for frontend communication
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
+     allow_origins=[
+        "http://localhost:3000",  # Local development
+        "https://neurobotics.vercel.app",  # Production URL
+        "https://*.vercel.app"  # Any Vercel preview deployments
+    ], 
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -38,6 +44,17 @@ model = OpenAIChatCompletionsModel(
     openai_client=external_client,
     model="gemini-2.0-flash",
 )
+
+
+# ADD all
+  # Priority order: Flash models have better free tier quotas
+    # preferred_models = [
+    #     "models/gemini-2.5-flash",
+    #     "models/gemini-2.0-flash", 
+    #     "models/gemini-flash-latest",
+    #     "models/gemini-1.5-flash",
+    #     "models/gemini-1.5-flash-latest"
+    # ]
 
 config = RunConfig(
     model=model,
@@ -199,4 +216,6 @@ async def main():
 if __name__ == "__main__":
     import uvicorn
     # Run FastAPI server instead of the test function
-    uvicorn.run(app, host="0.0.0.0", port=8000)
+    uvicorn.run("main:app", host="0.0.0.0", port=8080, reload=False)  # ✅ PORT 8080, reload=False
+
+    
