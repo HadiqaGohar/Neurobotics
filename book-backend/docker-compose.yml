@@ -30,3 +30,8 @@ services:
 
 volumes:
   qdrant_data:
+
+
+#  # docker-compose.personalization.yml starts here
+
+

@@ -321,10 +321,21 @@ async def main():
     result = await Runner.run(agent, "What is the capital of Pakistan?", run_config=config)
     print(f"Result: {result.final_output}")
 
+# if __name__ == "__main__":
+#     import uvicorn
+#     # Run FastAPI server instead of the test function
+#     # uvicorn.run("main:app", host="0.0.0.0", port=8000, reload=True)
+#     uvicorn.run("main:app", host="0.0.0.0", port=8080, reload=False)  # ✅ PORT 8080, reload=False    
+
+
+
 if __name__ == "__main__":
     import uvicorn
-    # Run FastAPI server instead of the test function
-    # uvicorn.run("main:app", host="0.0.0.0", port=8000, reload=True)
-    uvicorn.run("main:app", host="0.0.0.0", port=8080, reload=False)  # ✅ PORT 8080, reload=False    
-
-
+    port = int(os.getenv("PORT", 8080))  # ✅ Cloud Run PORT
+    uvicorn.run(
+        "main:app",  # ✅ String format
+        host="0.0.0.0", 
+        port=port, 
+        reload=False,  # ✅ Production
+        workers=1  # ✅ Cloud Run single worker
+    )
