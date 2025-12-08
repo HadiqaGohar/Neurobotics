@@ -1,0 +1,7 @@
+2025-12-07 22:10:26 - app - INFO - config - setup_logging:177 - Logging configured for development environment
+2025-12-07 22:11:20 - app - INFO - config - setup_logging:177 - Logging configured for development environment
+2025-12-07 22:11:31 - alembic.runtime.migration - INFO - migration - __init__:211 - Context impl PostgresqlImpl.
+2025-12-07 22:11:31 - alembic.runtime.migration - INFO - migration - __init__:214 - Will assume transactional DDL.
+2025-12-07 22:11:32 - alembic.runtime.migration - INFO - migration - run_migrations:622 - Running upgrade  -> 1e99b209d38f, Initial RAG schema
+2025-12-07 22:11:34 - alembic.runtime.migration - INFO - migration - run_migrations:622 - Running upgrade 1e99b209d38f -> book_backend_001, Add book backend models
+2025-12-07 22:11:41 - alembic.runtime.migration - INFO - migration - run_migrations:622 - Running upgrade book_backend_001 -> 16cb23c1f120, Add personalization tables

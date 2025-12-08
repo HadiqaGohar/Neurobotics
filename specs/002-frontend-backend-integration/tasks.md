@@ -8,7 +8,7 @@ This document outlines the tasks required to integrate the `book-frontend` with 
 ## Phase 1: Setup
 *Initial checks and environment preparation.*
 
-- [ ] T001 Ensure `book-backend` API is running and accessible (e.g., check FastAPI documentation endpoint).
+- [x] T001 Ensure `book-backend` API is running and accessible (e.g., check FastAPI documentation endpoint).
     - **Status**: Blocked. The new FastAPI application (`book-backend/app/main.py`) and its functionalities (book content, personalization, etc.) from feature `001-book-backend-api` are not yet implemented. This task cannot proceed until those backend tasks are completed.
 
 ## Phase 2: Foundational (Backend Configuration)

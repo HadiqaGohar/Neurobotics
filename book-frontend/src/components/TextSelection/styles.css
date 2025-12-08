@@ -1,0 +1,129 @@
+/* Text Selection Popup Styles */
+.text-selection-popup {
+  animation: popupFadeIn 0.2s ease-out;
+  filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.15));
+}
+
+.popup-content {
+  background: #ffffff;
+  border: 1px solid #e1e5e9;
+  border-radius: 8px;
+  padding: 8px;
+  display: flex;
+  gap: 4px;
+  min-width: 200px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.popup-button {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 6px;
+  background: #f8f9fa;
+  color: #495057;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  white-space: nowrap;
+  flex: 1;
+}
+
+.popup-button:hover {
+  background: #e9ecef;
+  color: #212529;
+  transform: translateY(-1px);
+}
+
+.ask-button:hover {
+  background: #e3f2fd;
+  color: #1976d2;
+}
+
+.summary-button:hover {
+  background: #f3e5f5;
+  color: #7b1fa2;
+}
+
+.popup-button svg {
+  flex-shrink: 0;
+}
+
+.popup-arrow {
+  position: absolute;
+  bottom: -6px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 12px;
+  height: 12px;
+  background: #ffffff;
+  border: 1px solid #e1e5e9;
+  border-top: none;
+  border-left: none;
+  transform: translateX(-50%) rotate(45deg);
+}
+
+/* Dark mode support */
+[data-theme='dark'] .popup-content {
+  background: #2d3748;
+  border-color: #4a5568;
+  color: #e2e8f0;
+}
+
+[data-theme='dark'] .popup-button {
+  background: #4a5568;
+  color: #e2e8f0;
+}
+
+[data-theme='dark'] .popup-button:hover {
+  background: #718096;
+  color: #ffffff;
+}
+
+[data-theme='dark'] .ask-button:hover {
+  background: #2b6cb0;
+  color: #ffffff;
+}
+
+[data-theme='dark'] .summary-button:hover {
+  background: #805ad5;
+  color: #ffffff;
+}
+
+[data-theme='dark'] .popup-arrow {
+  background: #2d3748;
+  border-color: #4a5568;
+}
+
+/* Animation */
+@keyframes popupFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .popup-content {
+    min-width: 180px;
+    padding: 6px;
+  }
+  
+  .popup-button {
+    padding: 6px 10px;
+    font-size: 12px;
+  }
+  
+  .popup-button svg {
+    width: 14px;
+    height: 14px;
+  }
+}

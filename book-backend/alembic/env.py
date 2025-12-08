@@ -19,10 +19,17 @@ if config.config_file_name is not None:
 
 # add your model's MetaData object here
 # for 'autogenerate' support
-# from myapp import mymodel
-# target_metadata = mymodel.Base.metadata
-from src.database.models import Base
-target_metadata = Base.metadata
+# Import both old and new models
+from src.database.models import Base as OldBase
+from app.models.database import Base as NewBase
+
+# Use the new models as primary target
+target_metadata = NewBase.metadata
+
+# Set database URL from environment
+database_url = os.getenv("NEON_DATABASE_URL")
+if database_url:
+    config.set_main_option("sqlalchemy.url", database_url)
 
 # other values from the config, defined by the needs of env.py,
 # can be acquired:

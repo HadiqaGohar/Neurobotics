@@ -4,6 +4,9 @@
  * work well for content-centric websites.
  */
 
+/* Import authentication styles */
+@import './auth.css';
+
 /* You can override the default Infima variables here. */
 :root {
   --ifm-color-primary: #764ba2;
@@ -125,6 +128,7 @@
 .navbar__items {
   align-items: center;
 }
+
 /* ChatBot Global Styles - Ensure visibility on all pages */
 .chatbot-container {
   position: fixed !important;

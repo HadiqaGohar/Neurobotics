@@ -1,0 +1,497 @@
+/**
+ * RTL (Right-to-Left) CSS Framework
+ * Comprehensive support for Arabic, Urdu, and other RTL languages
+ */
+
+/* ===== ROOT VARIABLES ===== */
+:root {
+  /* RTL-aware spacing */
+  --spacing-start: 0;
+  --spacing-end: 0;
+  
+  /* RTL-aware borders */
+  --border-start: 0;
+  --border-end: 0;
+  
+  /* RTL-aware positioning */
+  --position-start: auto;
+  --position-end: auto;
+  
+  /* RTL-aware transforms */
+  --transform-scale-x: 1;
+}
+
+/* ===== RTL ROOT OVERRIDES ===== */
+[dir="rtl"] {
+  --transform-scale-x: -1;
+}
+
+/* ===== BASE RTL STYLES ===== */
+html[dir="rtl"] {
+  direction: rtl;
+  text-align: right;
+}
+
+html[dir="rtl"] body {
+  font-family: 'Noto Nastaliq Urdu', 'Jameel Noori Nastaleeq', 'Arabic Typesetting', 'Traditional Arabic', serif;
+  text-align: right;
+}
+
+/* ===== RTL UTILITY CLASSES ===== */
+
+/* Text Alignment */
+.text-start {
+  text-align: left;
+}
+
+[dir="rtl"] .text-start {
+  text-align: right;
+}
+
+.text-end {
+  text-align: right;
+}
+
+[dir="rtl"] .text-end {
+  text-align: left;
+}
+
+/* Margin Utilities */
+.ms-0 { margin-inline-start: 0; }
+.ms-1 { margin-inline-start: 0.25rem; }
+.ms-2 { margin-inline-start: 0.5rem; }
+.ms-3 { margin-inline-start: 0.75rem; }
+.ms-4 { margin-inline-start: 1rem; }
+.ms-5 { margin-inline-start: 1.25rem; }
+.ms-6 { margin-inline-start: 1.5rem; }
+.ms-8 { margin-inline-start: 2rem; }
+.ms-10 { margin-inline-start: 2.5rem; }
+.ms-12 { margin-inline-start: 3rem; }
+
+.me-0 { margin-inline-end: 0; }
+.me-1 { margin-inline-end: 0.25rem; }
+.me-2 { margin-inline-end: 0.5rem; }
+.me-3 { margin-inline-end: 0.75rem; }
+.me-4 { margin-inline-end: 1rem; }
+.me-5 { margin-inline-end: 1.25rem; }
+.me-6 { margin-inline-end: 1.5rem; }
+.me-8 { margin-inline-end: 2rem; }
+.me-10 { margin-inline-end: 2.5rem; }
+.me-12 { margin-inline-end: 3rem; }
+
+/* Padding Utilities */
+.ps-0 { padding-inline-start: 0; }
+.ps-1 { padding-inline-start: 0.25rem; }
+.ps-2 { padding-inline-start: 0.5rem; }
+.ps-3 { padding-inline-start: 0.75rem; }
+.ps-4 { padding-inline-start: 1rem; }
+.ps-5 { padding-inline-start: 1.25rem; }
+.ps-6 { padding-inline-start: 1.5rem; }
+.ps-8 { padding-inline-start: 2rem; }
+.ps-10 { padding-inline-start: 2.5rem; }
+.ps-12 { padding-inline-start: 3rem; }
+
+.pe-0 { padding-inline-end: 0; }
+.pe-1 { padding-inline-end: 0.25rem; }
+.pe-2 { padding-inline-end: 0.5rem; }
+.pe-3 { padding-inline-end: 0.75rem; }
+.pe-4 { padding-inline-end: 1rem; }
+.pe-5 { padding-inline-end: 1.25rem; }
+.pe-6 { padding-inline-end: 1.5rem; }
+.pe-8 { padding-inline-end: 2rem; }
+.pe-10 { padding-inline-end: 2.5rem; }
+.pe-12 { padding-inline-end: 3rem; }
+
+/* Border Utilities */
+.border-start { border-inline-start: 1px solid #e5e7eb; }
+.border-end { border-inline-end: 1px solid #e5e7eb; }
+.border-start-0 { border-inline-start: 0; }
+.border-end-0 { border-inline-end: 0; }
+
+/* Positioning Utilities */
+.start-0 { inset-inline-start: 0; }
+.start-1 { inset-inline-start: 0.25rem; }
+.start-2 { inset-inline-start: 0.5rem; }
+.start-3 { inset-inline-start: 0.75rem; }
+.start-4 { inset-inline-start: 1rem; }
+.start-6 { inset-inline-start: 1.5rem; }
+.start-8 { inset-inline-start: 2rem; }
+.start-12 { inset-inline-start: 3rem; }
+
+.end-0 { inset-inline-end: 0; }
+.end-1 { inset-inline-end: 0.25rem; }
+.end-2 { inset-inline-end: 0.5rem; }
+.end-3 { inset-inline-end: 0.75rem; }
+.end-4 { inset-inline-end: 1rem; }
+.end-6 { inset-inline-end: 1.5rem; }
+.end-8 { inset-inline-end: 2rem; }
+.end-12 { inset-inline-end: 3rem; }
+
+/* ===== FLEXBOX RTL SUPPORT ===== */
+.flex-row-reverse {
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .flex-row {
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .flex-row-reverse {
+  flex-direction: row;
+}
+
+.justify-start {
+  justify-content: flex-start;
+}
+
+[dir="rtl"] .justify-start {
+  justify-content: flex-end;
+}
+
+.justify-end {
+  justify-content: flex-end;
+}
+
+[dir="rtl"] .justify-end {
+  justify-content: flex-start;
+}
+
+/* ===== GRID RTL SUPPORT ===== */
+.grid-cols-rtl {
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+[dir="rtl"] .grid-cols-rtl {
+  direction: rtl;
+}
+
+/* ===== FORM ELEMENTS RTL ===== */
+input, textarea, select {
+  direction: inherit;
+}
+
+[dir="rtl"] input[type="text"],
+[dir="rtl"] input[type="email"],
+[dir="rtl"] input[type="password"],
+[dir="rtl"] textarea {
+  text-align: right;
+  padding-right: 0.75rem;
+  padding-left: 2.5rem;
+}
+
+[dir="rtl"] .form-input-icon {
+  right: auto;
+  left: 0.75rem;
+}
+
+/* ===== NAVIGATION RTL ===== */
+.nav-rtl {
+  direction: ltr;
+}
+
+[dir="rtl"] .nav-rtl {
+  direction: rtl;
+}
+
+[dir="rtl"] .nav-rtl .nav-item {
+  margin-left: 0;
+  margin-right: 1rem;
+}
+
+[dir="rtl"] .nav-rtl .nav-item:last-child {
+  margin-right: 0;
+}
+
+/* ===== DROPDOWN RTL ===== */
+.dropdown-menu {
+  left: 0;
+  right: auto;
+}
+
+[dir="rtl"] .dropdown-menu {
+  left: auto;
+  right: 0;
+}
+
+[dir="rtl"] .dropdown-item {
+  text-align: right;
+  padding-right: 1rem;
+  padding-left: 1rem;
+}
+
+/* ===== MODAL RTL ===== */
+[dir="rtl"] .modal-header .close {
+  margin-left: 0;
+  margin-right: auto;
+}
+
+[dir="rtl"] .modal-body {
+  text-align: right;
+}
+
+/* ===== CARD RTL ===== */
+[dir="rtl"] .card-body {
+  text-align: right;
+}
+
+[dir="rtl"] .card-header {
+  text-align: right;
+}
+
+/* ===== BUTTON RTL ===== */
+.btn-icon-start {
+  padding-left: 2.5rem;
+  padding-right: 1rem;
+}
+
+[dir="rtl"] .btn-icon-start {
+  padding-left: 1rem;
+  padding-right: 2.5rem;
+}
+
+.btn-icon-end {
+  padding-right: 2.5rem;
+  padding-left: 1rem;
+}
+
+[dir="rtl"] .btn-icon-end {
+  padding-right: 1rem;
+  padding-left: 2.5rem;
+}
+
+/* ===== TABLE RTL ===== */
+[dir="rtl"] table {
+  direction: rtl;
+}
+
+[dir="rtl"] th,
+[dir="rtl"] td {
+  text-align: right;
+}
+
+[dir="rtl"] .table-responsive {
+  direction: rtl;
+}
+
+/* ===== BREADCRUMB RTL ===== */
+[dir="rtl"] .breadcrumb-item + .breadcrumb-item::before {
+  content: "\\";
+  transform: scaleX(-1);
+}
+
+/* ===== PAGINATION RTL ===== */
+[dir="rtl"] .pagination {
+  direction: rtl;
+}
+
+[dir="rtl"] .page-link {
+  margin-left: -1px;
+  margin-right: 0;
+}
+
+[dir="rtl"] .page-item:first-child .page-link {
+  margin-left: 0;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  border-top-right-radius: 0.375rem;
+  border-bottom-right-radius: 0.375rem;
+}
+
+[dir="rtl"] .page-item:last-child .page-link {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  border-top-left-radius: 0.375rem;
+  border-bottom-left-radius: 0.375rem;
+}
+
+/* ===== ICONS RTL ===== */
+.icon-flip-rtl {
+  transform: scaleX(1);
+}
+
+[dir="rtl"] .icon-flip-rtl {
+  transform: scaleX(-1);
+}
+
+/* Common icons that need flipping */
+[dir="rtl"] .icon-arrow-right,
+[dir="rtl"] .icon-chevron-right,
+[dir="rtl"] .icon-angle-right {
+  transform: scaleX(-1);
+}
+
+[dir="rtl"] .icon-arrow-left,
+[dir="rtl"] .icon-chevron-left,
+[dir="rtl"] .icon-angle-left {
+  transform: scaleX(-1);
+}
+
+/* ===== TYPOGRAPHY RTL ===== */
+[dir="rtl"] h1, [dir="rtl"] h2, [dir="rtl"] h3, 
+[dir="rtl"] h4, [dir="rtl"] h5, [dir="rtl"] h6 {
+  text-align: right;
+}
+
+[dir="rtl"] p {
+  text-align: right;
+}
+
+[dir="rtl"] .lead {
+  text-align: right;
+}
+
+/* ===== LIST RTL ===== */
+[dir="rtl"] ul, [dir="rtl"] ol {
+  padding-left: 0;
+  padding-right: 1.5rem;
+}
+
+[dir="rtl"] .list-unstyled {
+  padding-right: 0;
+}
+
+/* ===== URDU SPECIFIC STYLES ===== */
+.urdu-text {
+  font-family: 'Noto Nastaliq Urdu', 'Jameel Noori Nastaleeq', serif;
+  font-size: 1.1em;
+  line-height: 1.8;
+  direction: rtl;
+  text-align: right;
+}
+
+.urdu-heading {
+  font-family: 'Noto Nastaliq Urdu', 'Jameel Noori Nastaleeq', serif;
+  font-weight: 600;
+  direction: rtl;
+  text-align: right;
+}
+
+/* ===== MIXED CONTENT RTL ===== */
+.mixed-content {
+  direction: ltr;
+  text-align: left;
+}
+
+[dir="rtl"] .mixed-content {
+  direction: rtl;
+  text-align: right;
+}
+
+.mixed-content .ltr-inline {
+  direction: ltr;
+  display: inline-block;
+  text-align: left;
+}
+
+.mixed-content .rtl-inline {
+  direction: rtl;
+  display: inline-block;
+  text-align: right;
+}
+
+/* ===== CODE BLOCKS RTL ===== */
+[dir="rtl"] pre,
+[dir="rtl"] code {
+  direction: ltr;
+  text-align: left;
+}
+
+[dir="rtl"] .code-block {
+  direction: ltr;
+  text-align: left;
+}
+
+/* ===== RESPONSIVE RTL ===== */
+@media (max-width: 768px) {
+  [dir="rtl"] .mobile-center {
+    text-align: center;
+  }
+  
+  [dir="rtl"] .mobile-stack {
+    flex-direction: column;
+  }
+}
+
+/* ===== ANIMATION RTL ===== */
+@keyframes slideInRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+[dir="rtl"] .slide-in-start {
+  animation: slideInRight 0.3s ease-out;
+}
+
+[dir="ltr"] .slide-in-start {
+  animation: slideInLeft 0.3s ease-out;
+}
+
+[dir="rtl"] .slide-in-end {
+  animation: slideInLeft 0.3s ease-out;
+}
+
+[dir="ltr"] .slide-in-end {
+  animation: slideInRight 0.3s ease-out;
+}
+
+/* ===== ACCESSIBILITY RTL ===== */
+[dir="rtl"] .sr-only {
+  direction: rtl;
+}
+
+/* Focus styles for RTL */
+[dir="rtl"] *:focus {
+  outline-offset: 2px;
+}
+
+/* ===== PRINT RTL ===== */
+@media print {
+  [dir="rtl"] * {
+    direction: rtl !important;
+    text-align: right !important;
+  }
+  
+  [dir="rtl"] .no-print-rtl {
+    display: none !important;
+  }
+}
+
+/* ===== DARK MODE RTL ===== */
+@media (prefers-color-scheme: dark) {
+  [dir="rtl"] .dark-mode-rtl {
+    background-color: #1a1a1a;
+    color: #ffffff;
+  }
+}
+
+/* ===== HIGH CONTRAST RTL ===== */
+@media (prefers-contrast: high) {
+  [dir="rtl"] .high-contrast-rtl {
+    border: 2px solid;
+  }
+}
+
+/* ===== REDUCED MOTION RTL ===== */
+@media (prefers-reduced-motion: reduce) {
+  [dir="rtl"] .slide-in-start,
+  [dir="rtl"] .slide-in-end {
+    animation: none;
+  }
+}

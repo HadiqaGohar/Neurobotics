@@ -1,0 +1,675 @@
+/**
+ * Advanced Urdu Typography System
+ * Comprehensive typography support for Urdu language with proper rendering
+ */
+
+/* ===== FONT IMPORTS ===== */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+/* ===== FONT FACE DECLARATIONS ===== */
+@font-face {
+  font-family: 'Jameel Noori Nastaleeq';
+  src: url('/fonts/JameelNooriNastaleeq.woff2') format('woff2'),
+       url('/fonts/JameelNooriNastaleeq.woff') format('woff'),
+       url('/fonts/JameelNooriNastaleeq.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Pak Nastaleeq';
+  src: url('/fonts/PakNastaleeq.woff2') format('woff2'),
+       url('/fonts/PakNastaleeq.woff') format('woff'),
+       url('/fonts/PakNastaleeq.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Alvi Nastaleeq';
+  src: url('/fonts/AlviNastaleeq.woff2') format('woff2'),
+       url('/fonts/AlviNastaleeq.woff') format('woff'),
+       url('/fonts/AlviNastaleeq.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ===== CSS CUSTOM PROPERTIES ===== */
+:root {
+  /* Urdu Font Stacks */
+  --urdu-nastaleeq-fonts: 'Noto Nastaliq Urdu', 'Jameel Noori Nastaleeq', 'Pak Nastaleeq', 'Alvi Nastaleeq', serif;
+  --urdu-naskh-fonts: 'Noto Sans Arabic', 'Arabic Typesetting', 'Traditional Arabic', sans-serif;
+  --urdu-mixed-fonts: 'Noto Nastaliq Urdu', 'Roboto', 'Segoe UI', sans-serif;
+  
+  /* Typography Scale for Urdu */
+  --urdu-text-xs: 0.875rem;    /* 14px */
+  --urdu-text-sm: 1rem;        /* 16px */
+  --urdu-text-base: 1.125rem;  /* 18px */
+  --urdu-text-lg: 1.25rem;     /* 20px */
+  --urdu-text-xl: 1.375rem;    /* 22px */
+  --urdu-text-2xl: 1.5rem;     /* 24px */
+  --urdu-text-3xl: 1.75rem;    /* 28px */
+  --urdu-text-4xl: 2rem;       /* 32px */
+  --urdu-text-5xl: 2.5rem;     /* 40px */
+  --urdu-text-6xl: 3rem;       /* 48px */
+  
+  /* Line Heights for Urdu */
+  --urdu-leading-tight: 1.4;
+  --urdu-leading-normal: 1.6;
+  --urdu-leading-relaxed: 1.8;
+  --urdu-leading-loose: 2.0;
+  
+  /* Letter Spacing for Urdu */
+  --urdu-tracking-tight: -0.025em;
+  --urdu-tracking-normal: 0em;
+  --urdu-tracking-wide: 0.025em;
+  
+  /* Colors for Urdu Text */
+  --urdu-text-primary: #1a1a1a;
+  --urdu-text-secondary: #4a4a4a;
+  --urdu-text-muted: #6b7280;
+  --urdu-text-accent: #059669;
+}
+
+/* ===== BASE URDU TYPOGRAPHY ===== */
+.urdu-text {
+  font-family: var(--urdu-nastaleeq-fonts);
+  direction: rtl;
+  text-align: right;
+  unicode-bidi: embed;
+  font-feature-settings: 
+    "kern" 1,
+    "liga" 1,
+    "calt" 1,
+    "ccmp" 1,
+    "mark" 1,
+    "mkmk" 1;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ===== URDU TEXT SIZES ===== */
+.urdu-text-xs {
+  font-size: var(--urdu-text-xs);
+  line-height: var(--urdu-leading-normal);
+}
+
+.urdu-text-sm {
+  font-size: var(--urdu-text-sm);
+  line-height: var(--urdu-leading-normal);
+}
+
+.urdu-text-base {
+  font-size: var(--urdu-text-base);
+  line-height: var(--urdu-leading-normal);
+}
+
+.urdu-text-lg {
+  font-size: var(--urdu-text-lg);
+  line-height: var(--urdu-leading-normal);
+}
+
+.urdu-text-xl {
+  font-size: var(--urdu-text-xl);
+  line-height: var(--urdu-leading-tight);
+}
+
+.urdu-text-2xl {
+  font-size: var(--urdu-text-2xl);
+  line-height: var(--urdu-leading-tight);
+}
+
+.urdu-text-3xl {
+  font-size: var(--urdu-text-3xl);
+  line-height: var(--urdu-leading-tight);
+}
+
+.urdu-text-4xl {
+  font-size: var(--urdu-text-4xl);
+  line-height: var(--urdu-leading-tight);
+}
+
+.urdu-text-5xl {
+  font-size: var(--urdu-text-5xl);
+  line-height: var(--urdu-leading-tight);
+}
+
+.urdu-text-6xl {
+  font-size: var(--urdu-text-6xl);
+  line-height: var(--urdu-leading-tight);
+}
+
+/* ===== URDU HEADINGS ===== */
+.urdu-heading {
+  font-family: var(--urdu-nastaleeq-fonts);
+  font-weight: 600;
+  color: var(--urdu-text-primary);
+  direction: rtl;
+  text-align: right;
+  margin-bottom: 0.5em;
+}
+
+.urdu-h1 {
+  @extend .urdu-heading;
+  font-size: var(--urdu-text-6xl);
+  line-height: var(--urdu-leading-tight);
+  font-weight: 700;
+}
+
+.urdu-h2 {
+  @extend .urdu-heading;
+  font-size: var(--urdu-text-5xl);
+  line-height: var(--urdu-leading-tight);
+  font-weight: 600;
+}
+
+.urdu-h3 {
+  @extend .urdu-heading;
+  font-size: var(--urdu-text-4xl);
+  line-height: var(--urdu-leading-tight);
+  font-weight: 600;
+}
+
+.urdu-h4 {
+  @extend .urdu-heading;
+  font-size: var(--urdu-text-3xl);
+  line-height: var(--urdu-leading-normal);
+  font-weight: 500;
+}
+
+.urdu-h5 {
+  @extend .urdu-heading;
+  font-size: var(--urdu-text-2xl);
+  line-height: var(--urdu-leading-normal);
+  font-weight: 500;
+}
+
+.urdu-h6 {
+  @extend .urdu-heading;
+  font-size: var(--urdu-text-xl);
+  line-height: var(--urdu-leading-normal);
+  font-weight: 500;
+}
+
+/* ===== URDU PARAGRAPHS ===== */
+.urdu-paragraph {
+  font-family: var(--urdu-nastaleeq-fonts);
+  font-size: var(--urdu-text-base);
+  line-height: var(--urdu-leading-relaxed);
+  color: var(--urdu-text-primary);
+  direction: rtl;
+  text-align: right;
+  margin-bottom: 1em;
+  hyphens: auto;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+.urdu-paragraph-sm {
+  @extend .urdu-paragraph;
+  font-size: var(--urdu-text-sm);
+}
+
+.urdu-paragraph-lg {
+  @extend .urdu-paragraph;
+  font-size: var(--urdu-text-lg);
+}
+
+/* ===== URDU LISTS ===== */
+.urdu-list {
+  font-family: var(--urdu-nastaleeq-fonts);
+  direction: rtl;
+  text-align: right;
+  padding-right: 1.5rem;
+  padding-left: 0;
+}
+
+.urdu-list li {
+  margin-bottom: 0.5em;
+  line-height: var(--urdu-leading-relaxed);
+}
+
+.urdu-list-ordered {
+  @extend .urdu-list;
+  list-style-type: arabic-indic;
+}
+
+.urdu-list-unordered {
+  @extend .urdu-list;
+  list-style-type: disc;
+}
+
+/* ===== URDU QUOTES ===== */
+.urdu-blockquote {
+  font-family: var(--urdu-nastaleeq-fonts);
+  font-size: var(--urdu-text-lg);
+  line-height: var(--urdu-leading-relaxed);
+  direction: rtl;
+  text-align: right;
+  border-right: 4px solid var(--urdu-text-accent);
+  padding-right: 1rem;
+  padding-left: 0;
+  margin: 1.5rem 0;
+  font-style: italic;
+  color: var(--urdu-text-secondary);
+}
+
+.urdu-quote-inline {
+  font-family: var(--urdu-nastaleeq-fonts);
+  direction: rtl;
+  quotes: "«" "»" "‹" "›";
+}
+
+.urdu-quote-inline::before {
+  content: open-quote;
+}
+
+.urdu-quote-inline::after {
+  content: close-quote;
+}
+
+/* ===== MIXED CONTENT (URDU + ENGLISH) ===== */
+.urdu-mixed-content {
+  font-family: var(--urdu-mixed-fonts);
+  direction: rtl;
+  text-align: right;
+  line-height: var(--urdu-leading-relaxed);
+}
+
+.urdu-mixed-content .english-inline {
+  font-family: 'Roboto', 'Segoe UI', sans-serif;
+  direction: ltr;
+  unicode-bidi: embed;
+}
+
+.urdu-mixed-content .urdu-inline {
+  font-family: var(--urdu-nastaleeq-fonts);
+  direction: rtl;
+  unicode-bidi: embed;
+}
+
+/* ===== CODE BLOCKS WITH URDU COMMENTS ===== */
+.urdu-code-block {
+  font-family: 'Fira Code', 'Monaco', 'Consolas', monospace;
+  direction: ltr;
+  text-align: left;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  padding: 1rem;
+  overflow-x: auto;
+  line-height: 1.5;
+}
+
+.urdu-code-block .urdu-comment {
+  font-family: var(--urdu-nastaleeq-fonts);
+  direction: rtl;
+  color: #10b981;
+  font-size: 0.9em;
+}
+
+/* ===== URDU FORM ELEMENTS ===== */
+.urdu-input {
+  font-family: var(--urdu-nastaleeq-fonts);
+  direction: rtl;
+  text-align: right;
+  padding: 0.75rem 1rem;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  font-size: var(--urdu-text-base);
+  line-height: var(--urdu-leading-normal);
+}
+
+.urdu-input::placeholder {
+  color: var(--urdu-text-muted);
+  direction: rtl;
+  text-align: right;
+}
+
+.urdu-textarea {
+  @extend .urdu-input;
+  min-height: 120px;
+  resize: vertical;
+  line-height: var(--urdu-leading-relaxed);
+}
+
+.urdu-label {
+  font-family: var(--urdu-nastaleeq-fonts);
+  font-size: var(--urdu-text-sm);
+  font-weight: 500;
+  color: var(--urdu-text-primary);
+  direction: rtl;
+  text-align: right;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+/* ===== URDU BUTTONS ===== */
+.urdu-button {
+  font-family: var(--urdu-nastaleeq-fonts);
+  font-size: var(--urdu-text-base);
+  font-weight: 500;
+  direction: rtl;
+  text-align: center;
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.urdu-button-primary {
+  @extend .urdu-button;
+  background-color: var(--urdu-text-accent);
+  color: white;
+}
+
+.urdu-button-primary:hover {
+  background-color: #047857;
+}
+
+.urdu-button-secondary {
+  @extend .urdu-button;
+  background-color: #f3f4f6;
+  color: var(--urdu-text-primary);
+  border: 1px solid #d1d5db;
+}
+
+.urdu-button-secondary:hover {
+  background-color: #e5e7eb;
+}
+
+/* ===== URDU TABLES ===== */
+.urdu-table {
+  width: 100%;
+  direction: rtl;
+  border-collapse: collapse;
+  font-family: var(--urdu-nastaleeq-fonts);
+}
+
+.urdu-table th,
+.urdu-table td {
+  text-align: right;
+  padding: 0.75rem;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.urdu-table th {
+  font-weight: 600;
+  background-color: #f9fafb;
+  color: var(--urdu-text-primary);
+}
+
+.urdu-table td {
+  color: var(--urdu-text-secondary);
+}
+
+/* ===== URDU NAVIGATION ===== */
+.urdu-nav {
+  direction: rtl;
+  font-family: var(--urdu-nastaleeq-fonts);
+}
+
+.urdu-nav-item {
+  display: inline-block;
+  margin-left: 1rem;
+  margin-right: 0;
+}
+
+.urdu-nav-item:first-child {
+  margin-left: 0;
+}
+
+.urdu-nav-link {
+  color: var(--urdu-text-primary);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.urdu-nav-link:hover {
+  color: var(--urdu-text-accent);
+}
+
+/* ===== URDU BREADCRUMBS ===== */
+.urdu-breadcrumb {
+  direction: rtl;
+  font-family: var(--urdu-nastaleeq-fonts);
+  display: flex;
+  align-items: center;
+  font-size: var(--urdu-text-sm);
+  color: var(--urdu-text-muted);
+}
+
+.urdu-breadcrumb-item {
+  display: flex;
+  align-items: center;
+}
+
+.urdu-breadcrumb-item:not(:last-child)::after {
+  content: "←";
+  margin: 0 0.5rem;
+  color: var(--urdu-text-muted);
+}
+
+/* ===== URDU CARDS ===== */
+.urdu-card {
+  direction: rtl;
+  text-align: right;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.urdu-card-header {
+  padding: 1rem 1.5rem;
+  border-bottom: 1px solid #e5e7eb;
+  background: #f9fafb;
+}
+
+.urdu-card-title {
+  font-family: var(--urdu-nastaleeq-fonts);
+  font-size: var(--urdu-text-xl);
+  font-weight: 600;
+  color: var(--urdu-text-primary);
+  margin: 0;
+}
+
+.urdu-card-body {
+  padding: 1.5rem;
+  font-family: var(--urdu-nastaleeq-fonts);
+  line-height: var(--urdu-leading-relaxed);
+}
+
+/* ===== URDU ALERTS ===== */
+.urdu-alert {
+  direction: rtl;
+  text-align: right;
+  font-family: var(--urdu-nastaleeq-fonts);
+  padding: 1rem;
+  border-radius: 6px;
+  margin-bottom: 1rem;
+}
+
+.urdu-alert-success {
+  @extend .urdu-alert;
+  background-color: #d1fae5;
+  border: 1px solid #a7f3d0;
+  color: #065f46;
+}
+
+.urdu-alert-warning {
+  @extend .urdu-alert;
+  background-color: #fef3c7;
+  border: 1px solid #fde68a;
+  color: #92400e;
+}
+
+.urdu-alert-error {
+  @extend .urdu-alert;
+  background-color: #fee2e2;
+  border: 1px solid #fecaca;
+  color: #991b1b;
+}
+
+.urdu-alert-info {
+  @extend .urdu-alert;
+  background-color: #dbeafe;
+  border: 1px solid #bfdbfe;
+  color: #1e40af;
+}
+
+/* ===== URDU BADGES ===== */
+.urdu-badge {
+  font-family: var(--urdu-nastaleeq-fonts);
+  font-size: var(--urdu-text-xs);
+  font-weight: 500;
+  padding: 0.25rem 0.5rem;
+  border-radius: 9999px;
+  display: inline-block;
+  direction: rtl;
+}
+
+.urdu-badge-primary {
+  @extend .urdu-badge;
+  background-color: var(--urdu-text-accent);
+  color: white;
+}
+
+.urdu-badge-secondary {
+  @extend .urdu-badge;
+  background-color: #6b7280;
+  color: white;
+}
+
+/* ===== RESPONSIVE TYPOGRAPHY ===== */
+@media (max-width: 768px) {
+  :root {
+    --urdu-text-xs: 0.8125rem;   /* 13px */
+    --urdu-text-sm: 0.9375rem;   /* 15px */
+    --urdu-text-base: 1rem;      /* 16px */
+    --urdu-text-lg: 1.125rem;    /* 18px */
+    --urdu-text-xl: 1.25rem;     /* 20px */
+    --urdu-text-2xl: 1.375rem;   /* 22px */
+    --urdu-text-3xl: 1.5rem;     /* 24px */
+    --urdu-text-4xl: 1.75rem;    /* 28px */
+    --urdu-text-5xl: 2rem;       /* 32px */
+    --urdu-text-6xl: 2.25rem;    /* 36px */
+  }
+  
+  .urdu-paragraph {
+    line-height: var(--urdu-leading-loose);
+  }
+  
+  .urdu-card-body {
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .urdu-heading {
+    margin-bottom: 0.75rem;
+  }
+  
+  .urdu-blockquote {
+    padding-right: 0.75rem;
+    margin: 1rem 0;
+  }
+  
+  .urdu-button {
+    padding: 0.625rem 1.25rem;
+    font-size: var(--urdu-text-sm);
+  }
+}
+
+/* ===== PRINT STYLES ===== */
+@media print {
+  .urdu-text,
+  .urdu-paragraph,
+  .urdu-heading {
+    color: black !important;
+    font-size: 12pt !important;
+    line-height: 1.4 !important;
+  }
+  
+  .urdu-h1 { font-size: 18pt !important; }
+  .urdu-h2 { font-size: 16pt !important; }
+  .urdu-h3 { font-size: 14pt !important; }
+  .urdu-h4 { font-size: 13pt !important; }
+  .urdu-h5 { font-size: 12pt !important; }
+  .urdu-h6 { font-size: 11pt !important; }
+}
+
+/* ===== ACCESSIBILITY ===== */
+@media (prefers-reduced-motion: reduce) {
+  .urdu-button,
+  .urdu-nav-link {
+    transition: none;
+  }
+}
+
+@media (prefers-contrast: high) {
+  :root {
+    --urdu-text-primary: #000000;
+    --urdu-text-secondary: #333333;
+    --urdu-text-muted: #666666;
+  }
+  
+  .urdu-input,
+  .urdu-textarea {
+    border-width: 2px;
+  }
+}
+
+/* ===== FONT LOADING OPTIMIZATION ===== */
+.urdu-text-loading {
+  font-family: serif;
+  visibility: hidden;
+}
+
+.fonts-loaded .urdu-text-loading {
+  font-family: var(--urdu-nastaleeq-fonts);
+  visibility: visible;
+}
+
+/* ===== LIGATURE SUPPORT ===== */
+.urdu-ligatures {
+  font-feature-settings: 
+    "liga" 1,
+    "clig" 1,
+    "dlig" 1,
+    "hlig" 1,
+    "calt" 1,
+    "ccmp" 1,
+    "locl" 1,
+    "mark" 1,
+    "mkmk" 1,
+    "kern" 1;
+  text-rendering: optimizeLegibility;
+}
+
+/* ===== CONTEXTUAL ALTERNATES ===== */
+.urdu-contextual {
+  font-feature-settings: 
+    "calt" 1,
+    "ccmp" 1,
+    "init" 1,
+    "medi" 1,
+    "fina" 1,
+    "isol" 1;
+}
+
+/* ===== DIACRITICS SUPPORT ===== */
+.urdu-diacritics {
+  font-feature-settings: 
+    "mark" 1,
+    "mkmk" 1,
+    "ccmp" 1;
+  line-height: var(--urdu-leading-loose);
+}

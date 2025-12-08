@@ -1,0 +1,87 @@
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.iconContainer {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.brainIcon {
+  color: #667eea;
+  z-index: 2;
+}
+
+.robotIcon {
+  color: #764ba2;
+  margin-left: -0.3rem;
+  z-index: 1;
+}
+
+.logoText {
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+.neuro {
+  color: #667eea;
+}
+
+.botics {
+  color: #1a202c;
+}
+
+.ai {
+  color: #764ba2;
+  margin-left: 0.2rem;
+}
+
+/* Size variants */
+.small .brainIcon,
+.small .robotIcon {
+  font-size: 1.2rem;
+}
+
+.small .logoText {
+  font-size: 1rem;
+}
+
+.medium .brainIcon,
+.medium .robotIcon {
+  font-size: 1.5rem;
+}
+
+.medium .logoText {
+  font-size: 1.2rem;
+}
+
+.large .brainIcon,
+.large .robotIcon {
+  font-size: 2rem;
+}
+
+.large .logoText {
+  font-size: 1.5rem;
+}
+
+/* Dark mode support */
+[data-theme='dark'] .botics {
+  color: #ffffff;
+}
+
+/* Hover effect */
+.logo:hover .brainIcon {
+  color: #5a67d8;
+  transform: scale(1.1);
+  transition: all 0.2s ease;
+}
+
+.logo:hover .robotIcon {
+  color: #6b46c1;
+  transform: scale(1.1);
+  transition: all 0.2s ease;
+}
