@@ -324,4 +324,7 @@ async def main():
 if __name__ == "__main__":
     import uvicorn
     # Run FastAPI server instead of the test function
-    uvicorn.run("main:app", host="0.0.0.0", port=8000, reload=True)
+    # uvicorn.run("main:app", host="0.0.0.0", port=8000, reload=True)
+    uvicorn.run("main:app", host="0.0.0.0", port=8080, reload=False)  # ✅ PORT 8080, reload=False    
+
+

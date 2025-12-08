@@ -9,3 +9,4 @@ venv/
 dist/
 *.egg-info/
 firebase-debug.log
+book-backend/DockerfileOrg.md
