@@ -19,7 +19,7 @@ def main():
     uvicorn.run(
         "app.main:app",
         host="0.0.0.0",
-        port=8001,
+        port=int(os.getenv("PORT", "8001")),
         reload=settings.debug,
         log_level="info" if not settings.debug else "debug"
     )
