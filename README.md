@@ -94,6 +94,20 @@ npm start
 # The frontend will be available at http://localhost:3000
 ```
 
+## Agents Work
+
+### Openai-agents Architect
+![alt text](image.png)
+
+### Error Fixer Pro
+![alt text](image-1.png)
+
+### Docusaurus Architect
+![alt text](image-2.png)
+
+### Rag implementation Planner
+![alt text](image-3.png)
+
 ## 💡 Usage
 
 *   Access the deployed frontend application via your Vercel URL.
