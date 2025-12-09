@@ -7,6 +7,10 @@ Welcome to the Neurobotics AI Book Application! This project features a robust b
 [![Watch the demo video](https://img.youtube.com/vi/YOUR_YOUTUBE_VIDEO_ID/0.jpg)](https://www.youtube.com/watch?v=YOUR_YOUTUBE_VIDEO_ID)
 *(Please replace `YOUR_YOUTUBE_VIDEO_ID` with the actual ID of your YouTube demo video.)*
 
+## 💡 Mindmap
+![Mind Map](https://github.com/HadiqaGohar/Neurobotics/raw/main/NotebookLM%20Mind%20Map.png)
+
+
 ## ✨ Features
 
 This application is packed with modern features to enhance user interaction and content delivery:
