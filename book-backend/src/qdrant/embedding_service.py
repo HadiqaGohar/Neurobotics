@@ -1,8 +1,8 @@
 import os
 from typing import List, Dict, Any
 
-# Placeholder for an actual embedding model import, e.g., SentenceTransformer
-# from sentence_transformers import SentenceTransformer 
+from sentence_transformers import SentenceTransformer 
+
 
 class EmbeddingService:
     _instance = None
@@ -11,21 +11,19 @@ class EmbeddingService:
         if cls._instance is None:
             cls._instance = super(EmbeddingService, cls).__new__(cls)
             # Initialize embedding model here
-            # cls._instance.model = SentenceTransformer(os.getenv("EMBEDDING_MODEL_NAME", "all-MiniLM-L6-v2"))
-            print("EmbeddingService initialized (embedding model placeholder).")
+            cls._instance.model = SentenceTransformer(os.getenv("EMBEDDING_MODEL_NAME", "all-MiniLM-L6-v2"))
+            print("EmbeddingService initialized with SentenceTransformer model 'all-MiniLM-L6-v2'.")
         return cls._instance
 
     # Placeholder for actual embedding generation
     async def generate_embeddings(self, texts: List[str]) -> List[List[float]]:
         """
         Generates embeddings for a list of texts using the configured embedding model.
-        In a real implementation, this would call out to a model like SentenceTransformer, OpenAI, or Gemini.
         """
-        print(f"Generating placeholder embeddings for {len(texts)} texts.")
-        # Replace with actual embedding generation logic
-        # For now, return dummy embeddings (e.g., zeros or random vectors)
-        embedding_dimension = int(os.getenv("EMBEDDING_DIMENSION", "384")) # e.g., 384 for all-MiniLM-L6-v2
-        return [[0.1] * embedding_dimension for _ in texts] # Dummy embeddings
+        print(f"Generating embeddings for {len(texts)} texts using {self._instance.model.model_name_or_path}...")
+        # Use the loaded SentenceTransformer model to generate embeddings
+        embeddings = self._instance.model.encode(texts)
+        return embeddings.tolist() # Convert numpy array to list of lists
 
     async def get_user_profile_embedding(self, user_preferences: Dict[str, Any]) -> List[float]:
         """

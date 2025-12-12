@@ -9,6 +9,10 @@ from typing import List, Optional
 import uuid
 from datetime import datetime
 
+BOOK_PATH = "NEUROBOTICS_BOOK.txt"  # Path to the book directory
+EMBEDDING_MODEL = ""
+
+
 load_dotenv()
 
 # FastAPI app setup
@@ -101,6 +105,7 @@ async def health_check():
         return health_status
     except Exception as e:
         return {"status": "unhealthy", "error": "Service unavailable"}
+
 
 @app.post("/chat", response_model=ChatResponse)
 async def send_message(request: ChatRequest):

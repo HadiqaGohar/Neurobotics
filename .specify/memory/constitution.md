@@ -39,7 +39,8 @@ The book will be authored using Docusaurus for documentation generation. Spec-Ki
 
 ### II. Integrated RAG Chatbot Development
 
-A Retrieval-Augmented Generation (RAG) chatbot will be embedded within the published book. This chatbot must utilize OpenAI Agents/ChatKit SDKs with the Gemini API helpfull link https://openai.github.io/openai-agents-python/, FastAPI, Neon Serverless Postgres database, and Qdrant Cloud Free Tier. It must be capable of answering user questions about the book's content, including questions based solely on user-selected text.
+A Retrieval-Augmented Generation (RAG) chatbot will be embedded within the published book. This chatbot must utilize OpenAI Agents/ChatKit SDKs with the Gemini API helpfull link https://openai.github.io/openai-agents-python/, FastAPI, Neon Serverless Postgres database, and Qdrant Cloud Free Tier. It must be capable of answering user questions about the book's content, including questions based solely on user-selected text. 
+
 
 ### III. Reusable Intelligence via Claude Code Subagents & Skills
 
@@ -71,3 +72,10 @@ The development workflow will prioritize small, testable changes, and clear comm
 This Constitution supersedes all other practices. Amendments require documentation, approval, and a migration plan. All Pull Requests and code reviews must verify compliance with these principles.
 
 **Version**: 0.1.0 | **Ratified**: 2025-12-04 | **Last Amended**: 2025-12-04
+
+
+
+
+# Features 
+
+Meri book ka jitna bhi text he wo embedding ki through ay aur mera chatbot meri book ki sary knowledge rakhtha ho 

@@ -90,7 +90,6 @@ The future of AI extends beyond digital spaces into the physical world. This cap
   - Cognitive Planning: Using LLMs to translate natural language ("Clean the room") into a sequence of ROS 2 actions.
   - Capstone Project: The Autonomous Humanoid. A final project where a simulated robot receives a voice command, plans a path, navigates obstacles, identifies an object using computer vision, and manipulates it.
 
-##
 
 ## **Why Physical AI Matters**
 

@@ -6,7 +6,9 @@ from src.database import crud
 from src.security.security_utils import SecurityValidator
 import os
 import logging
-from openai_agents.agents.chat_agent import ChatAgent
+# from openai_agents.agents.chat_agent import ChatAgent
+from agents import Agent, Runner
+
 
 logger = logging.getLogger(__name__)
 
@@ -21,7 +23,7 @@ class RAGService:
         if not api_key:
             logger.warning("GEMINI_API_KEY not found, RAG responses may fail")
             
-        self.chat_agent = ChatAgent(model_name="gemini-pro", api_key=api_key)
+        self.chat_agent = Agent(model_name="gemini-2.5-flash", api_key=api_key)
 
     async def retrieve_context(self, query: str, top_k: int = 5) -> List[str]:
         """Retrieve relevant context for a query with security validation."""
@@ -115,6 +117,7 @@ Context:
 {context_str}
 
 Question: {sanitized_query}
+
 
 Helpful Answer:"""
 

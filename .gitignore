@@ -11,3 +11,4 @@ dist/
 firebase-debug.log
 book-backend/DockerfileOrg.md
 output.txt
+explanation_for_frontend_fix.txt
