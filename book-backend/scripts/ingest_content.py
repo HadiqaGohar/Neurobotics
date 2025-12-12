@@ -16,9 +16,9 @@ from pathlib import Path
 # Add the src directory to the Python path
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..', 'src'))
 
-from services.ingestion_service import BookIngestionService
-from services.embedding_service import EmbeddingService
-from services.qdrant_service import QdrantService
+from ingestion_service import BookIngestionService
+from embedding_service import EmbeddingService
+from qdrant_service import QdrantService
 from qdrant_client import QdrantClient
 from dotenv import load_dotenv
 

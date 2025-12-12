@@ -321,7 +321,7 @@ GEMINI_API_KEY=your_gemini_api_key
 QDRANT_URL=https://your-cluster-url.qdrant.io
 QDRANT_API_KEY=your_qdrant_api_key
 NEON_DATABASE_URL=postgresql://user:password@host/database
-OPENAI_API_KEY=your_openai_api_key  # For Whisper if using OpenAI
+GEMINI_API_KEY=your_gemini_api_key  # For Whisper if using OpenAI
 ```
 
 ## Deployment Configuration

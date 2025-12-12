@@ -71,3 +71,10 @@ The development workflow will prioritize small, testable changes, and clear comm
 This Constitution supersedes all other practices. Amendments require documentation, approval, and a migration plan. All Pull Requests and code reviews must verify compliance with these principles.
 
 **Version**: 0.1.0 | **Ratified**: 2025-12-04 | **Last Amended**: 2025-12-04
+
+
+
+
+# Features 
+
+Meri book ka jitna bhi text he wo embedding ki through ay aur mera chatbot meri book ki sary knowledge rakhtha ho 
