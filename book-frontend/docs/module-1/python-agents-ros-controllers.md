@@ -6,6 +6,7 @@
 
 ## Why use `rclpy`?
 
+
 *   **Ease of Development:** Python is widely used in AI and robotics due to its simplicity, extensive libraries, and rapid prototyping capabilities. `rclpy` allows developers to leverage these advantages within the ROS 2 ecosystem.
 *   **Integration with AI Frameworks:** AI agents built with frameworks like TensorFlow, PyTorch, or custom Python scripts can easily communicate with ROS 2 through `rclpy`, sending commands to robot actuators and receiving data from sensors.
 *   **Access to ROS 2 Features:** `rclpy` provides full access to ROS 2's communication mechanisms (topics, services, actions), ensuring seamless interaction with other ROS 2 components, regardless of their implementation language (C++, Python).

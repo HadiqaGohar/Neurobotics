@@ -118,6 +118,7 @@ Context:
 
 Question: {sanitized_query}
 
+
 Helpful Answer:"""
 
             # Generate response using ChatAgent (Gemini integration)

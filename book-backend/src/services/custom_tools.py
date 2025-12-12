@@ -5,7 +5,6 @@ import openai
 from qdrant_client import QdrantClient, models
 from PyPDF2 import PdfReader
 
-
 class TextLoader:
     def __init__(self):
         if PdfReader is None:

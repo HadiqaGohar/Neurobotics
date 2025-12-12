@@ -2,6 +2,7 @@
 
 ## Introduction to Unity for Robotics
 
+
 Unity is a powerful cross-platform game engine that has found significant application in robotics for its advanced visualization capabilities, realistic rendering, and interactive environment development. While Gazebo excels in physics-driven simulations for control, Unity often complements it by providing a platform for creating highly detailed and visually rich "digital twin" environments, crucial for human-robot interaction (HRI) and sensor simulation that demands graphical fidelity.
 
 ## High-Fidelity Rendering

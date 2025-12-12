@@ -1,5 +1,4 @@
 
-
 # **Summary generator skill**
 
 This skill condenses long texts, articles, or documents into concise summaries while retaining the key points and essential information.

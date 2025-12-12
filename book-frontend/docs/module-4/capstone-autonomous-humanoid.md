@@ -1,5 +1,6 @@
 # Capstone Project: The Autonomous Humanoid
 
+
 ## Project Overview
 
 The Capstone Project for the Vision-Language-Action (VLA) module aims to integrate all the concepts learned throughout the course into a comprehensive demonstration: an autonomous simulated humanoid robot responding to natural language voice commands. This project emphasizes the full pipeline from human intent to robot action, encompassing speech recognition, cognitive planning, navigation, perception, and manipulation.

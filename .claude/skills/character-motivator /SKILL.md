@@ -5,6 +5,7 @@ This skill analyzes a character’s actions, decisions, and dialogue to provide 
 
 ## **Usage**
 
+
 Provide a description of a character’s actions or plot points. The skill identifies whether the behavior aligns with the character’s traits and goals.
 
 **Example:**

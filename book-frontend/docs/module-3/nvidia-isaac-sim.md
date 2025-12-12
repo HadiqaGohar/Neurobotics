@@ -2,6 +2,7 @@
 
 ## Introduction to NVIDIA Isaac Sim
 
+
 NVIDIA Isaac Sim is a scalable robotics simulation application and synthetic data generation tool built on NVIDIA Omniverse™. It provides a high-fidelity, physically accurate virtual environment for developing, testing, and training AI-powered robots. Isaac Sim is particularly well-suited for tasks that require photorealistic rendering and large volumes of diverse data for machine learning.
 
 ## Photorealistic Simulation

@@ -2,6 +2,7 @@
 
 ## Introduction to Sensor Simulation
 
+
 Sensor simulation is a critical aspect of robotics development. It allows engineers and researchers to test algorithms, evaluate robot designs, and train AI models without the need for expensive physical hardware or real-world data collection, which can be time-consuming and dangerous. Accurate sensor models are essential for creating realistic simulations that translate well to the real world.
 
 ## Types of Simulated Sensors

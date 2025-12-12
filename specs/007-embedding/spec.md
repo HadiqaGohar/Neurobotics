@@ -5,6 +5,7 @@ This document specifies the technical requirements for embedding book content an
 
 ## 2. Components
 
+
 ### 2.1. Embedding Model
 -   **Model:** `gemini-embedding-001`
 -   **Dimension:** `1536`

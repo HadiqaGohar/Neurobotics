@@ -7,6 +7,7 @@ This skill helps ensure your story maintains logical flow and narrative coherenc
 
 Provide a summary of your story or key plot points. The skill analyzes the information and flags areas that may need revision to maintain consistency.
 
+
 ---
 
 ## **Example**

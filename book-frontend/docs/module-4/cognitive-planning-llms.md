@@ -1,5 +1,6 @@
 # Cognitive Planning: Using LLMs to Translate Natural Language into ROS 2 Actions
 
+
 ## Introduction to Cognitive Planning with LLMs
 
 Cognitive planning in robotics refers to the ability of a robot to reason about its goals, the environment, and its own capabilities to generate a sequence of actions that will achieve the desired outcome. With the advent of Large Language Models (LLMs), a new paradigm has emerged where natural language instructions, often high-level and abstract (e.g., "Clean the room"), can be translated into concrete, robot-executable action plans, including sequences of ROS 2 actions.

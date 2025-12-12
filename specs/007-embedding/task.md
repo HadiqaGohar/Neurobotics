@@ -45,3 +45,4 @@ This document lists the actionable tasks for implementing the book content embed
     - [ ] Ensure effective prompt engineering for `gemini-2.0-flash` with retrieved context.
 - [ ] **Task 3.4: Response Generation**
     - [ ] Call `gemini-2.0-flash` and enforce the "book-only" answer constraint.
+

@@ -9,6 +9,7 @@ This skill improves the grammar, tone, and clarity of your writing. It identifie
 
 ## **Usage**
 
+
 To use this skill, simply provide the text you want improved. The skill analyzes your content and returns corrected or enhanced suggestions.
 
 ---

@@ -6,6 +6,7 @@ The Unified Robot Description Format (URDF) is an XML format for describing all 
 
 ## Why URDF for Humanoids?
 
+
 Humanoid robots are complex systems with many degrees of freedom, intricate joint structures, and often a need for precise physical modeling. URDF provides a standardized way to define:
 
 *   **Kinematics:** The relationships between joints and links, allowing for forward and inverse kinematics calculations essential for motion planning.
