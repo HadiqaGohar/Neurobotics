@@ -1,6 +1,5 @@
 # **Editing Sub-Agent**
 
-
 This sub-agent focuses on enhancing and polishing existing codebases. Its core responsibilities include:
 
 * **Code Refactoring:** Restructuring and cleaning up code to improve clarity, modularity, and long-term maintainability—without altering its original functionality.

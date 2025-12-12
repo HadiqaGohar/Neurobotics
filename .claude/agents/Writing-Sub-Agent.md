@@ -2,7 +2,6 @@
 
 The Writing Sub-Agent is responsible for generating new code and building fresh functionality within the system. Its core duties include:
 
-
 * **Feature Development:** Implementing new capabilities and system behaviors based on design requirements and user specifications.
 * **File Creation:** Producing new source files, configuration files, and any additional assets required for new modules or components.
 * **Boilerplate & Template Setup:** Establishing foundational structures, starter templates, and initial configurations for new projects or features.
