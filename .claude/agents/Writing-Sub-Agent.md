@@ -1,4 +1,3 @@
-
 # **Writing Sub-Agent**
 
 The Writing Sub-Agent is responsible for generating new code and building fresh functionality within the system. Its core duties include:

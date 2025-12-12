@@ -1,4 +1,3 @@
-
 # **Research Sub-Agent**
 
 The Research Sub-Agent specializes in gathering insights, exploring the codebase, and answering in-depth technical queries. Its core responsibilities include:

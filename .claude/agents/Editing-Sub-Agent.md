@@ -1,6 +1,3 @@
-
-
-
 # **Editing Sub-Agent**
 
 This sub-agent focuses on enhancing and polishing existing codebases. Its core responsibilities include:
