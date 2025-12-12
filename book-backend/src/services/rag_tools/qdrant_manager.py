@@ -3,6 +3,7 @@ from qdrant_client import QdrantClient, models
 from typing import List, Dict, Any
 import uuid
 
+
 class QdrantManager:
     def __init__(self,
                  url: str = os.getenv("QDRANT_URL"),

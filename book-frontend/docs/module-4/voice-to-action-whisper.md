@@ -2,6 +2,7 @@
 
 ## Introduction to Voice-to-Action in Robotics
 
+
 Voice-to-Action systems in robotics enable humans to control robots using natural language voice commands. This paradigm significantly improves human-robot interaction by making it more intuitive and accessible, moving beyond traditional joystick or programming interfaces. OpenAI Whisper plays a crucial role in the initial step of this pipeline: accurately converting spoken language into text.
 
 ## OpenAI Whisper: Speech-to-Text Transcriptions

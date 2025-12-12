@@ -2,6 +2,7 @@ import os
 from typing import List
 from litellm import embedding
 
+
 class EmbeddingGenerator:
     def __init__(self, model_name: str = "gemini/gemini-embedding-001"):
         self.model_name = model_name

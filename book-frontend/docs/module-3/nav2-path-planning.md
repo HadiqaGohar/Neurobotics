@@ -2,6 +2,7 @@
 
 ## Introduction to Nav2
 
+
 Nav2 (Navigation2) is the successor to ROS 1's navigation stack, providing a complete framework for autonomous navigation in ROS 2. It's a collection of modular C++ and Python packages designed to help a robot navigate from a starting pose to a goal pose while avoiding obstacles. While Nav2 is broadly applicable to various robot types (wheeled, legged), its principles and configurability are crucial for understanding path planning challenges and solutions for bipedal humanoids.
 
 ## Challenges of Bipedal Humanoid Navigation

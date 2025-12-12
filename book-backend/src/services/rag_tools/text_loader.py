@@ -5,6 +5,7 @@ class TextLoader:
     def __init__(self, base_path: str = "modules"):
         self.base_path = base_path
 
+
     def _get_module_chapter_from_path(self, file_path: str):
         relative_path = os.path.relpath(file_path, self.base_path)
         parts = relative_path.split(os.sep)

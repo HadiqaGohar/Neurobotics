@@ -5,6 +5,7 @@ class TextChunker:
         self.chunk_size = chunk_size
         self.overlap = overlap
 
+
     def chunk_text(self, text: str):
         chunks = []
         if not text:

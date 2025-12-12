@@ -7,6 +7,7 @@ from sqlalchemy.dialects.postgresql import ARRAY # For vector type, if direct su
 from pgvector.sqlalchemy import Vector # For pgvector integration
 from typing import List
 
+
 # Define the base for declarative models
 Base = declarative_base()
 

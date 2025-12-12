@@ -6,6 +6,7 @@ ROS 2 (Robot Operating System 2) is a flexible framework for writing robot softw
 
 ## Core Concepts
 
+
 ### Nodes
 
 A **node** is an executable process that performs computation. ROS 2 is designed for modularity, where each node is responsible for a single, specific task (e.g., one node for controlling a motor, another for reading sensor data, another for path planning).

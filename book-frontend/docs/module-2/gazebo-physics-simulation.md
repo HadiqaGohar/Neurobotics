@@ -2,6 +2,7 @@
 
 ## Introduction to Gazebo
 
+
 Gazebo is a powerful 3D robot simulator. It accurately and efficiently simulates populations of robots in complex indoor and outdoor environments. With Gazebo, you can test algorithms, design robots, perform regression testing, and train AI systems using realistic scenarios. It provides robust physics engines, high-quality graphics, and convenient programmatic interfaces.
 
 ## Key Features for Simulation

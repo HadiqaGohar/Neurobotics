@@ -1,5 +1,4 @@
 
-
 # **Orchestrator Agent**
 
 The Orchestrator Agent serves as the central intelligence layer that oversees, coordinates, and drives the entire development workflow. It acts as the primary interface with the user and strategically assigns tasks to specialized sub-agents. Its key responsibilities include:

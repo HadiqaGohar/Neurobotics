@@ -1,5 +1,6 @@
 # All tasks for the RAG Chatbot implementation have been completed.
 
+
 ## Summary of Accomplishments:
 
 ### Phase 1: Environment Setup and Tool Definition

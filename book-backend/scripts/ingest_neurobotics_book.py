@@ -35,6 +35,7 @@ logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(
 logger = logging.getLogger(__name__)
 
 # Constants
+
 NEUROBOTICS_BOOK_PATH = "NEUROBOTICS_BOOK.txt"
 QDRANT_COLLECTION_NAME = "book_content"
 EMBEDDING_DIMENSION = 384  # all-MiniLM-L6-v2 produces 384-dimensional embeddings

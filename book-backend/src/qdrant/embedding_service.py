@@ -3,6 +3,7 @@ from typing import List, Dict, Any
 
 from sentence_transformers import SentenceTransformer 
 
+
 class EmbeddingService:
     _instance = None
 
