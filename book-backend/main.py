@@ -200,6 +200,7 @@ async def rag_chat(request: ChatRequest):
         # Enhanced AI response using RAG (Retrieval Augmented Generation)
         rag_response = await generate_rag_response(request.message)
         
+        
         session_id = request.session_id or str(uuid.uuid4())
         
         if session_id not in chat_sessions:

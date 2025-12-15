@@ -4,6 +4,7 @@ import re
 import asyncio
 
 
+
 class EmbeddingService:
     def __init__(self):
         self.model = SentenceTransformer('all-MiniLM-L6-v2')

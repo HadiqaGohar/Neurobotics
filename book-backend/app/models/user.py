@@ -7,6 +7,7 @@ from pydantic import BaseModel, EmailStr, validator
 from app.core.security import validate_password_strength, sanitize_input, validate_email_format
 
 
+
 class UserBase(BaseModel):
     """Base user model"""
     email: EmailStr

@@ -21,6 +21,7 @@ class PersonalizationService:
     def __init__(self, embedding_service: EmbeddingService):
         self.embedding_service = embedding_service
         
+        
         # Predefined user personas and their characteristics
         self.user_personas = {
             "beginner": {

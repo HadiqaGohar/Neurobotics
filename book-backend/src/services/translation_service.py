@@ -22,6 +22,7 @@ from src.performance.optimization import cache
 logger = logging.getLogger(__name__)
 
 
+
 class TranslationService:
     """Service for translating content to multiple languages."""
     

@@ -17,6 +17,7 @@ from pathlib import Path
 # Add the root project directory to the Python path
 # sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..'))
 
+
 from src.services.ingestion_service import BookIngestionService
 from src.services.embedding_service import EmbeddingService
 from src.services.qdrant_service import QdrantService

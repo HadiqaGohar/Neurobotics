@@ -2,6 +2,7 @@
 Core configuration for Book Backend API
 """
 
+
 import os
 import logging
 import logging.config

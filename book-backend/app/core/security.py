@@ -176,6 +176,7 @@ async def get_current_user(
         
         return _get_current_user_dependency
     
+    
     try:
         # Verify token and get user ID
         user_id = get_user_id_from_token(credentials.credentials)

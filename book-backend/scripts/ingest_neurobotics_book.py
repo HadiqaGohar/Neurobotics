@@ -1,6 +1,7 @@
 import sys
 import os
 
+
 # Add project root directory to Python path
 current_dir = os.path.dirname(os.path.abspath(__file__))
 # Script is in 'scripts' folder, so navigate up one level to reach book-backend folder
