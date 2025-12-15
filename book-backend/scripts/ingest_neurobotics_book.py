@@ -37,7 +37,13 @@ logger = logging.getLogger(__name__)
 
 # Constants
 
-NEUROBOTICS_BOOK_PATH = "../NEUROBOTICS_BOOK.txt"
+# NEUROBOTICS_BOOK_PATH = "../NEUROBOTICS_BOOK.txt" # Original line
+# Get the absolute path of the directory containing the script
+script_dir = os.path.dirname(os.path.abspath(__file__)) # e.g., /home/hadiqa/.../book-backend/scripts
+# Go up two levels to reach the project root (e.g., /home/hadiqa/.../Hackthon/Book/)
+project_root = os.path.abspath(os.path.join(script_dir, '..', '..'))
+NEUROBOTICS_BOOK_PATH = os.path.join(project_root, "NEUROBOTICS_BOOK.txt")
+
 QDRANT_COLLECTION_NAME = "book_content"
 EMBEDDING_DIMENSION = 384  # all-MiniLM-L6-v2 produces 384-dimensional embeddings
 
@@ -50,7 +56,7 @@ async def ingest_neurobotics_book():
             book_content = f.read()
         logger.info(f"Successfully loaded {NEUROBOTICS_BOOK_PATH}")
     except FileNotFoundError:
-        logger.error(f"Error: {NEUROBOTICS_BOOK_PATH} not found.")
+        logger.error(f"Error: {NEUROBOTICS_BOOK_PATH} not found. Please ensure the file exists at this absolute path.")
         return
     except Exception as e:
         logger.error(f"Error reading {NEUROBOTICS_BOOK_PATH}: {e}")
