@@ -9,8 +9,6 @@ from typing import List, Optional
 import uuid
 from datetime import datetime
 
-BOOK_PATH = "NEUROBOTICS_BOOK.txt"  # Path to the book directory
-EMBEDDING_MODEL = ""
 
 
 load_dotenv()

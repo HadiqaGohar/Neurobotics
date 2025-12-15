@@ -6,9 +6,12 @@ import os
 import logging
 import logging.config
 from typing import List, Dict, Any
-from pydantic_settings import BaseSettings
+from pydantic_settings import BaseSettings, SettingsConfigDict
 from pydantic import validator
 from functools import lru_cache
+from dotenv import load_dotenv
+
+load_dotenv()
 
 
 class Settings(BaseSettings):
@@ -52,10 +55,7 @@ class Settings(BaseSettings):
             raise ValueError("DATABASE_URL or NEON_DATABASE_URL is required")
         return v
     
-    class Config:
-        env_file = ".env"
-        case_sensitive = False
-        extra = "ignore"  # Allow extra fields in environment
+    model_config = SettingsConfigDict(env_file='.env', case_sensitive=False, extra='ignore')
 
 
 def get_logging_config() -> Dict[str, Any]:

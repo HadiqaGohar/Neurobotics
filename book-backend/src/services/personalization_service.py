@@ -7,10 +7,10 @@ import logging
 from typing import Dict, List, Optional, Any
 from datetime import datetime, timedelta
 from sqlalchemy.orm import Session
-from book_backend.src.database import crud
-from book_backend.src.database.models import User
-from book_backend.src.services.embedding_service import EmbeddingService
-from book_backend.src.security.security_utils import SecurityValidator
+from src.database import crud
+from src.database.models import User
+from src.services.embedding_service import EmbeddingService
+from src.security.security_utils import SecurityValidator
 
 logger = logging.getLogger(__name__)
 

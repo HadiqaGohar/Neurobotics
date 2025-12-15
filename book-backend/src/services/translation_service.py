@@ -16,8 +16,8 @@ import requests
 from googletrans import Translator
 import openai
 
-from book_backend.src.security.security_utils import SecurityValidator
-from book_backend.src.performance.optimization import cache
+from src.security.security_utils import SecurityValidator
+from src.performance.optimization import cache
 
 logger = logging.getLogger(__name__)
 

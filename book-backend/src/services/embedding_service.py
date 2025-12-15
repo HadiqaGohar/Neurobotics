@@ -102,7 +102,7 @@ class EmbeddingService:
         return chunks
 
     def _chunk_text_by_words(self, text: str, chunk_size: int, overlap: int) -> List[str]:
-        """Chunk text by words when sentence-based chunking isn't suitable"""
+        """Chunk text by words when sentence-based chunking isn'"t suitable"""
         words = text.split()
         chunks = []
         

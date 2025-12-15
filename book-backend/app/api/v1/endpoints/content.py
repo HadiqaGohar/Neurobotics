@@ -706,8 +706,7 @@ def get_content_recommendations(
             status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
             detail="Failed to get recommendations"
         )
-# T
-ranslation endpoints
+# Translation endpoints
 @router.post("/translate", response_model=TranslationResponse)
 def translate_text(
     translation_request: TranslationRequest,

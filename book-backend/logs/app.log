@@ -5,3 +5,19 @@
 2025-12-07 22:11:32 - alembic.runtime.migration - INFO - migration - run_migrations:622 - Running upgrade  -> 1e99b209d38f, Initial RAG schema
 2025-12-07 22:11:34 - alembic.runtime.migration - INFO - migration - run_migrations:622 - Running upgrade 1e99b209d38f -> book_backend_001, Add book backend models
 2025-12-07 22:11:41 - alembic.runtime.migration - INFO - migration - run_migrations:622 - Running upgrade book_backend_001 -> 16cb23c1f120, Add personalization tables
+2025-12-13 02:57:35 - app - INFO - config - setup_logging:177 - Logging configured for development environment
+2025-12-13 02:59:03 - app - INFO - config - setup_logging:177 - Logging configured for development environment
+2025-12-13 03:01:20 - app - INFO - config - setup_logging:177 - Logging configured for development environment
+2025-12-13 03:02:42 - app - INFO - config - setup_logging:177 - Logging configured for development environment
+2025-12-13 03:04:16 - app - INFO - config - setup_logging:177 - Logging configured for development environment
+2025-12-13 03:07:23 - app - INFO - config - setup_logging:177 - Logging configured for development environment
+2025-12-13 03:08:13 - app - INFO - config - setup_logging:177 - Logging configured for development environment
+2025-12-13 03:12:05 - app - INFO - config - setup_logging:177 - Logging configured for development environment
+2025-12-13 03:14:13 - app - INFO - config - setup_logging:177 - Logging configured for development environment
+2025-12-13 12:49:03 - app - INFO - config - setup_logging:177 - Logging configured for development environment
+2025-12-13 13:00:30 - app - INFO - config - setup_logging:177 - Logging configured for development environment
+2025-12-13 13:01:04 - app - INFO - config - setup_logging:177 - Logging configured for development environment
+2025-12-13 13:07:22 - app - INFO - config - setup_logging:177 - Logging configured for development environment
+2025-12-13 15:14:17 - app - INFO - config - setup_logging:177 - Logging configured for development environment
+2025-12-13 15:38:00 - app - INFO - config - setup_logging:177 - Logging configured for development environment
+2025-12-13 15:41:03 - app - INFO - config - setup_logging:177 - Logging configured for development environment
