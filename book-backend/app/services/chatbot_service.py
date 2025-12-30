@@ -2,7 +2,7 @@
 
 from typing import Optional, List, Dict, Any, Tuple
 from datetime import datetime
-from sqlalchemy.orm import Session
+from sqlalchemy.orm import Session # Correct import for Session
 import logging
 import json
 import asyncio
@@ -12,6 +12,7 @@ from app.models.database import ChatSession, ChatMessage, Book, Chapter, User
 from app.services.content_service import ContentService
 from app.services.qdrant_service import qdrant_service
 from app.core.config import get_settings
+from src.services.embedding_service import EmbeddingService # Import EmbeddingService
 
 logger = logging.getLogger(__name__)
 settings = get_settings()
@@ -20,26 +21,26 @@ settings = get_settings()
 class ChatbotService:
     """Service for RAG-powered chatbot using OpenAI Agents SDK"""
     
-    def __init__(self, db: Session):
+    def __init__(self, db: Session): # Use Session here
         self.db = db
         self.content_service = ContentService(db)
+        self.embedding_service = EmbeddingService() # Initialize EmbeddingService
         self.agent = None
         self.runner = None
         self._initialize_openai_agent()
-    
-    def _initialize_openai_agent(self):
-        """Initialize OpenAI Agent using proper Agents SDK"""
-        try:
-            if not settings.openai_api_key:
-                logger.warning("OpenAI API key not configured")
-                return
             
-            # Initialize OpenAI model
-            model = OpenAIChatCompletionsModel(
-                'gemini-2.0-flash',
-                api_key=settings.openai_api_key
-            )
-            
+            def _initialize_openai_agent(self):
+                """Initialize OpenAI Agent using proper Agents SDK"""
+                try:
+                    if not settings.openai_api_key:
+                        logger.warning("OpenAI API key not configured")
+                        return
+                    
+                    # Initialize OpenAI model
+                    model = OpenAIChatCompletionsModel(
+                        'gemini-2.0-flash',
+                        api_key=settings.openai_api_key
+                    )            
             # Create the agent with RAG capabilities
             self.agent = Agent(
                 model=model,
@@ -200,29 +201,17 @@ Content: {chunk['content']}
             ChatMessage.session_id == session_id
         ).order_by(ChatMessage.created_at.asc()).limit(limit).all()
     
-    def generate_embeddings(self, text: str) -> List[float]:
-        """Generate embeddings for text using OpenAI"""
+    async def generate_embeddings(self, text: str) -> List[float]:
+        """Generate embeddings for text using the unified EmbeddingService"""
         try:
-            # Use AsyncOpenAI for embeddings
-            async def _generate_embedding():
-                client = AsyncOpenAI(api_key=settings.openai_api_key)
-                response = await client.embeddings.create(
-                    model="text-embedding-ada-002",
-                    input=text
-                )
-                return response.data[0].embedding
-            
-            # Run async function
-            loop = asyncio.new_event_loop()
-            asyncio.set_event_loop(loop)
-            try:
-                embedding = loop.run_until_complete(_generate_embedding())
-                return embedding
-            finally:
-                loop.close()
+            # Use the injected EmbeddingService for consistent embeddings
+            embeddings = await self.embedding_service.generate_embeddings([text])
+            if embeddings:
+                return embeddings[0]
+            return []
             
         except Exception as e:
-            logger.error(f"Error generating embeddings: {e}")
+            logger.error(f"Error generating embeddings with EmbeddingService: {e}")
             raise
     
     def search_relevant_content(

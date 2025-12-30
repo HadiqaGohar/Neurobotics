@@ -8,9 +8,7 @@ from pydantic import BaseModel
 from typing import List, Optional
 import uuid
 from datetime import datetime
-
-
-
+from fr
 load_dotenv()
 
 # FastAPI app setup
@@ -253,8 +251,8 @@ async def generate_ai_response(message: str) -> str:
     """Generate AI response using the existing agent setup"""
     try:
         agent = Agent(
-            name="ChatBot Assistant", 
-            instructions="You are a helpful AI assistant in a chatbot interface. Provide clear, concise, and helpful responses. Be friendly and conversational.",
+            name="Neurobotics Book Assistant", 
+            instructions="You are a helpful Nerobotics AI assistant in a chatbot interface. Provide clear, concise, and helpful responses. Be friendly and conversational. If users ask for help, provide detailed explanations and guidance according to book content. like modules and entiere books conetent so you use ragchatbot and embedding techniques to provide accurate answers. you read NEUROBOTICS_BOOKS.txt content and help users understand complex topics.",
             model=model
         )
         result = await Runner.run(agent, message, run_config=config)
@@ -284,7 +282,7 @@ async def generate_rag_response(message: str) -> str:
     try:
         agent = Agent(
             name="RAG Assistant", 
-            instructions="You are an advanced AI assistant with access to a knowledge base. Provide comprehensive, well-structured responses with relevant context, examples, and detailed explanations. Use markdown formatting for better readability.",
+            instructions="You are an advanced AI assistant with access to a knowledge base. Your primary goal is to answer questions ONLY related to the content of the 'Neurobotics book' provided through your knowledge base. Provide comprehensive, well-structured responses with relevant context, examples, and detailed explanations. If the answer to the user's question is not found within your knowledge base, you MUST clearly state that the information is not available in the provided context and refrain from generating generic or external information. Use markdown formatting for better readability.",
             model=model
         )
         rag_prompt = f"Using your knowledge base, provide a comprehensive response to: {message}"
@@ -324,14 +322,6 @@ async def main():
     agent = Agent(name="Assistant", instructions="You are a helpful assistant.", model=model)
     result = await Runner.run(agent, "What is the capital of Pakistan?", run_config=config)
     print(f"Result: {result.final_output}")
-
-# if __name__ == "__main__":
-#     import uvicorn
-#     # Run FastAPI server instead of the test function
-#     # uvicorn.run("main:app", host="0.0.0.0", port=8000, reload=True)
-#     uvicorn.run("main:app", host="0.0.0.0", port=8080, reload=False)  # ✅ PORT 8080, reload=False    
-
-
 
 if __name__ == "__main__":
     import uvicorn
